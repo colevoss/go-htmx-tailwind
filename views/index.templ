@@ -1,0 +1,24 @@
+package views
+
+import "github.com/colevoss/go-htmx-tailwind/views/components"
+
+templ Index() {
+	@components.Page("HTMX Rules") {
+		<div class="dark:text-white text-black flex flex-col space-y-2 justify-center items-center">
+			<h1 class="text-8xl">
+				Hello!
+			</h1>
+			<div>
+				<ul>
+					<li>
+						<a hx-get="/cole" hx-target="#load-here" class="cursor-pointer hover:text-cyan-200">Load Cole</a>
+					</li>
+					<li>
+						<a hx-get="/coal" hx-target="#load-here" class="cursor-pointer hover:text-cyan-200">Load Coal</a>
+					</li>
+				</ul>
+			</div>
+			<div id="load-here">Placeholder</div>
+		</div>
+	}
+}
