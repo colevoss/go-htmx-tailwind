@@ -2,9 +2,10 @@ package handlers
 
 import (
 	"net/http"
+	"time"
 
-	"github.com/colevoss/go-htmx-tailwind/app"
-	"github.com/colevoss/go-htmx-tailwind/views"
+	"htmx-rulez-dood/app"
+	"htmx-rulez-dood/views"
 )
 
 type IndexHandlers struct {
@@ -29,5 +30,11 @@ func (i *IndexHandlers) Hello(w http.ResponseWriter, r *http.Request) {
 	// name := chi.URLParam(r, "name")
 	name := i.UrlParam(r, "name")
 	comp := views.Hello(name)
+	comp.Render(r.Context(), w)
+}
+
+func (i *IndexHandlers) GetStarted(w http.ResponseWriter, r *http.Request) {
+	time.Sleep(time.Second * 1)
+	comp := views.GetStarted("D00d")
 	comp.Render(r.Context(), w)
 }

@@ -3,7 +3,8 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/colevoss/go-htmx-tailwind/app"
+	"htmx-rulez-dood/app"
+
 	"github.com/go-chi/chi/v5"
 )
 

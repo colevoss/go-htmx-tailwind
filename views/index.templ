@@ -1,24 +1,24 @@
 package views
 
-import "github.com/colevoss/go-htmx-tailwind/views/components"
+import "htmx-rulez-dood/views/components"
 
 templ Index() {
-	@components.Page("HTMX Rules") {
-		<div class="dark:text-white text-black flex flex-col space-y-2 justify-center items-center">
-			<h1 class="text-8xl">
-				Hello!
+	@components.Page("HTMX Rulez D00d") {
+		<div class="text-center text-white flex flex-col space-y-6">
+			<h1 class="text-8xl font-bold bg-gradient-to-r from-blue-300 to-purple-700 text-transparent bg-clip-text">
+				HTMX Rulez D00d
 			</h1>
-			<div>
-				<ul>
-					<li>
-						<a hx-get="/cole" hx-target="#load-here" class="cursor-pointer hover:text-cyan-200">Load Cole</a>
-					</li>
-					<li>
-						<a hx-get="/coal" hx-target="#load-here" class="cursor-pointer hover:text-cyan-200">Load Coal</a>
-					</li>
-				</ul>
+			<div id="get-started">
+				<a
+ 					hx-get="/get-started"
+ 					hx-indicator="#loader"
+ 					hx-target="#get-started"
+ 					class="text-lg text-white underline hover:text-pink-600 transition duration-300"
+				>
+					Get Started
+				</a>
+				<div id="loader" class="htmx-indicator">Loading...</div>
 			</div>
-			<div id="load-here">Placeholder</div>
 		</div>
 	}
 }

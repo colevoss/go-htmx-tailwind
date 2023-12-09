@@ -4,8 +4,8 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/colevoss/go-htmx-tailwind/api"
-	"github.com/colevoss/go-htmx-tailwind/app"
+	"htmx-rulez-dood/api"
+	"htmx-rulez-dood/app"
 )
 
 func main() {
@@ -17,7 +17,7 @@ func main() {
 
 	api := api.NewApi(app)
 
-	l.Info("Hello", "hi", "howare you")
+	l.Info("HTMX", "Rulez", "D00d")
 
 	api.Run()
 }

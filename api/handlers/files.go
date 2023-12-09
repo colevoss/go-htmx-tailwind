@@ -6,7 +6,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/colevoss/go-htmx-tailwind/app"
+	"htmx-rulez-dood/app"
+
 	"github.com/go-chi/chi/v5"
 )
 

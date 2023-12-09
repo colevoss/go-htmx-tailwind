@@ -1,4 +1,4 @@
-module github.com/colevoss/go-htmx-tailwind
+module htmx-rulez-dood
 
 go 1.21.1
 

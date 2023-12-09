@@ -3,8 +3,9 @@ package api
 import (
 	"net/http"
 
-	"github.com/colevoss/go-htmx-tailwind/api/handlers"
-	"github.com/colevoss/go-htmx-tailwind/app"
+	"htmx-rulez-dood/api/handlers"
+	"htmx-rulez-dood/app"
+
 	"github.com/go-chi/chi/v5"
 )
 
