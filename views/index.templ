@@ -4,21 +4,31 @@ import "htmx-rulez-dood/views/components"
 
 templ Index() {
 	@components.Page("HTMX Rulez D00d") {
-		<div class="text-center text-white flex flex-col space-y-6">
+		<main class="bg-gray-900 h-screen flex flex-col items-center justify-center space-y-2">
 			<h1 class="text-8xl font-bold bg-gradient-to-r from-blue-300 to-purple-700 text-transparent bg-clip-text">
 				HTMX Rulez D00d
 			</h1>
-			<div id="get-started">
+			<h2 class="text-xl text-slate-400 p-2">
+				Enjoy this enjoyable tech stack! Learn more by exploring the links below!
+			</h2>
+			<section class="flex space-x-2 text-slate-200 underline py-2">
+				<a class="hover:text-slate-400" href="https://go.dev/" target="_blank">Go</a>
+				<a class="hover:text-slate-400" href="https://github.com/go-chi/chi" target="_blank">Chi</a>
+				<a class="hover:text-slate-400" href="https://templ.guide/" target="_blank">Templ</a>
+				<a class="hover:text-slate-400" href="https://htmx.org/" target="_blank">HTMX</a>
+				<a class="hover:text-slate-400" href="https://tailwindcss.com" target="_blank">Tailwind</a>
+			</section>
+			<div id="get-started" class="flex flex-col justify-center items-center">
 				<a
  					hx-get="/get-started"
  					hx-indicator="#loader"
  					hx-target="#get-started"
- 					class="text-lg text-white underline hover:text-pink-600 transition duration-300"
+ 					class="bg-pink-500 text-white px-8 py-2 rounded-full hover:bg-pink-600 transition duration-300"
 				>
 					Get Started
 				</a>
-				<div id="loader" class="htmx-indicator">Loading...</div>
+				<div id="loader" class="htmx-indicator text-white">Loading...</div>
 			</div>
-		</div>
+		</main>
 	}
 }
