@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tailwindcss -i ./index.css -o ./dist/output.css --watch"
+    "dev": "tailwindcss -i ./index.css -o ./dist/output.css --watch",
+    "tailwind": "tailwindcss -i ./index.css -o ./dist/output.css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "tailwindcss": "^3.3.6"
+    "tailwindcss": "^3.4.3"
   }
 }
