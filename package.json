@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "dev": "tailwindcss -i ./index.css -o ./dist/output.css --watch",
-    "tailwind": "tailwindcss -i ./index.css -o ./dist/output.css"
+    "tailwind": "tailwindcss -i ./index.css -o ./dist/css/output.css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
   }
 }

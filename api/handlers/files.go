@@ -1,32 +1,40 @@
 package handlers
 
 import (
+	"fmt"
+	"mime"
 	"net/http"
 	"os"
 	"path/filepath"
-	"strings"
 
 	"htmx-rulez-dood/app"
-
-	"github.com/go-chi/chi/v5"
 )
 
 type FilesHandler struct {
 	dir http.Dir
+	fs  http.Handler
 }
 
 func NewFilesHandler(app *app.App) *FilesHandler {
 	workDir, _ := os.Getwd()
 	dir := http.Dir(filepath.Join(workDir, "dist"))
 
+	mime.AddExtensionType(".js", "text/javascript")
+	mime.AddExtensionType(".mjs", "text/javascript")
+
+	fs := http.FileServer(dir)
+
+	t := mime.TypeByExtension(".mjs")
+	fmt.Printf("t: %v\n", t)
+
 	return &FilesHandler{
 		dir,
+		fs,
 	}
 }
 
 func (f *FilesHandler) Serve(w http.ResponseWriter, r *http.Request) {
-	rctx := chi.RouteContext(r.Context())
-	pathPrefix := strings.TrimSuffix(rctx.RoutePattern(), "/*")
-	fs := http.StripPrefix(pathPrefix, http.FileServer(f.dir))
+	fs := http.StripPrefix("/dist", f.fs)
+
 	fs.ServeHTTP(w, r)
 }
